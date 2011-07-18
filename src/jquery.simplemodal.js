@@ -139,6 +139,7 @@
 	 * containerCss:	(Object:{}) The CSS styling for the container div
 	 * dataId:			(String:'simplemodal-data') The DOM element id for the data div
 	 * dataCss:			(Object:{}) The CSS styling for the data div
+	 * dataCssClass:	(String:'simplemodal-data') CSS class for the data div
 	 * minHeight:		(Number:null) The minimum height for the container
 	 * minWidth:		(Number:null) The minimum width for the container
 	 * maxHeight:		(Number:null) The maximum height for the container. If not specified, the window height is used.
@@ -174,6 +175,7 @@
 		containerCss: {},
 		dataId: 'simplemodal-data',
 		dataCss: {},
+		dataCssClass: 'simplemodal-data',
 		minHeight: null,
 		minWidth: null,
 		maxHeight: null,
@@ -338,7 +340,7 @@
 			// append to body to get correct dimensions, then move to wrap
 			s.d.data = data
 				.attr('id', data.attr('id') || s.o.dataId)
-				.addClass('simplemodal-data')
+				.addClass(s.o.dataCssClass)
 				.css($.extend(s.o.dataCss, {
 						display: 'none'
 				}))
